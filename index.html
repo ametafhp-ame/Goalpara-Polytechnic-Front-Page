@@ -13,149 +13,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      font-family: "Poppins", sans-serif;
-      background-color: #f1f3f6;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
-
-    header {
-      background-color: #2874f0;
-      color: white;
-      padding: 15px 0;
-      text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 1.8rem;
-    }
-
-    .container {
-      background: white;
-      max-width: 600px;
-      margin: 25px auto;
-      padding: 25px 20px;
-      border-radius: 12px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    }
-
-    h2 {
-      color: #2874f0;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    label {
-      font-weight: 600;
-      margin-top: 10px;
-      display: block;
-      color: #444;
-    }
-
-    input, select, textarea {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 15px;
-      margin-top: 5px;
-      margin-bottom: 15px;
-    }
-
-    textarea { resize: none; height: 70px; }
-
-    .price-info {
-      text-align: center;
-      color: #2874f0;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-
-    button {
-      width: 100%;
-      background-color: #fb641b;
-      border: none;
-      color: white;
-      padding: 12px;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background-color: #f45b10;
-      transform: scale(1.02);
-    }
-
-    .sample-section {
-      text-align: center;
-      margin-top: 10px;
-      margin-bottom: 25px;
-    }
-
-    .sample-section h3 {
-      color: #2874f0;
-      margin-bottom: 10px;
-    }
-
-    .sample-grid {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .sample-option {
-      border: 2px solid transparent;
-      border-radius: 10px;
-      overflow: hidden;
-      cursor: pointer;
-      transition: 0.3s;
-      flex: 1 1 calc(45% - 10px);
-      max-width: 45%;
-    }
-
-    .sample-option img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      display: block;
-    }
-
-    .sample-option.selected {
-      border: 3px solid #2874f0;
-      box-shadow: 0 0 10px rgba(40,116,240,0.6);
-    }
-
-    @media (max-width: 480px) {
-      .sample-option {
-        flex: 1 1 100%;
-        max-width: 90%;
-      }
-    }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #2874f0;
-      color: white;
-      margin-top: 25px;
-    }
-
-    .cod-tag {
-      background: #388e3c;
-      color: white;
-      padding: 5px 10px;
-      border-radius: 6px;
-      display: inline-block;
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
+    body { font-family: "Poppins", sans-serif; background-color: #f1f3f6; margin:0; padding:0; color:#333; }
+    header { background-color: #2874f0; color: white; padding:15px 0; text-align:center; box-shadow: 0 2px 6px rgba(0,0,0,0.2);}
+    header h1 { margin:0; font-size:1.8rem; }
+    .container { background:white; max-width:600px; margin:25px auto; padding:25px 20px; border-radius:12px; box-shadow:0 3px 10px rgba(0,0,0,0.1);}
+    h2 { color:#2874f0; text-align:center; margin-bottom:20px; }
+    label { font-weight:600; margin-top:10px; display:block; color:#444; }
+    input, select { width:100%; padding:10px; border:1px solid #ccc; border-radius:6px; font-size:15px; margin-top:5px; margin-bottom:15px; }
+    .price-info { text-align:center; color:#2874f0; font-weight:bold; margin-bottom:15px; }
+    button { width:100%; background-color:#fb641b; border:none; color:white; padding:12px; border-radius:8px; font-size:16px; cursor:pointer; transition:0.3s; }
+    button:hover { background-color:#f45b10; transform:scale(1.02); }
+    .sample-section { text-align:center; margin-top:10px; margin-bottom:25px; }
+    .sample-section h3 { color:#2874f0; margin-bottom:10px; }
+    .sample-option img { width:100%; height:auto; border-radius:10px; display:block; max-width:300px; margin:0 auto;}
+    footer { text-align:center; padding:15px; background:#2874f0; color:white; margin-top:25px;}
+    .cod-tag { background:#388e3c; color:white; padding:5px 10px; border-radius:6px; display:inline-block; font-size:14px; margin-bottom:10px;}
   </style>
 </head>
 <body>
@@ -164,54 +36,27 @@
   </header>
 
   <div class="container">
-
-    <!-- ✅ SAMPLE FRONT PAGES -->
     <div class="sample-section">
-      <h3>📄 Choose Your Front Page</h3>
-      <div class="sample-grid">
-        <div class="sample-option" data-front="Front Page 1">
-          <img src="./image/frontpage1.jpg" alt="Front Page 1">
-        </div>
-        <div class="sample-option" data-front="Front Page 2">
-          <img src="./image/frontpage2.jpg" alt="Front Page 2">
-        </div>
+      <h3>📄 Front Page Preview</h3>
+      <div class="sample-option">
+        <img src="./image/frontpage2.jpg" alt="Front Page 2">
       </div>
     </div>
 
     <h2>🛒 Place Your Order</h2>
 
     <form id="orderForm">
-      <input type="hidden" id="selectedFront" required>
+      <!-- Automatically set front page since there's only one -->
+      <input type="hidden" id="selectedFront" value="Front Page 2">
 
       <label for="name">Full Name *</label>
       <input id="name" type="text" required placeholder="Enter your name">
 
       <label for="phone">Phone Number *</label>
       <div style="display: flex; align-items: center; gap: 5px;">
-      <span style="background:#eee; padding:10px; border-radius:6px; font-weight:600;">+91</span>
-      <input id="phone" type="tel" required placeholder="Enter 10-digit number"
-       pattern="[0-9]{10}" maxlength="10" style="flex:1;">
+        <span style="background:#eee; padding:10px; border-radius:6px; font-weight:600;">+91</span>
+        <input id="phone" type="tel" required placeholder="Enter 10-digit number" pattern="[0-9]{10}" maxlength="10" style="flex:1;">
       </div>
-    
-
-      <label for="semester">Semester (Optional):</label>
-      <select id="semester">
-        <option value="">-- Select Semester --</option>
-        <option>1st Semester</option>
-        <option>2nd Semester</option>
-        <option>3rd Semester</option>
-        <option>4th Semester</option>
-        <option>5th Semester</option>
-        <option>6th Semester</option>
-      </select>
-
-      <label for="branch">Branch (Optional):</label>
-      <select id="branch">
-        <option value="">-- Select Branch --</option>
-        <option>Civil Engineering</option>
-        <option>Electrical Engineering</option>
-        <option>Mechanical Engineering</option>
-      </select>
 
       <label for="price">Price Plan *</label>
       <select id="price" required>
@@ -225,11 +70,7 @@
       </select>
 
       <div class="price-info" id="priceInfo">Select a price to view details.</div>
-
       <div class="cod-tag">💵 Payment Method: Cash(or Online) — Pay After Delivery!</div>
-
-      <label for="message">Message / Notes (Optional):</label>
-      <textarea id="message" placeholder="Type any notes (optional)..."></textarea>
 
       <button type="submit">📦 Place Order on WhatsApp</button>
     </form>
@@ -241,50 +82,28 @@
   </footer>
 
   <script>
-    // 🔹 Handle Front Page Selection
-    const frontOptions = document.querySelectorAll(".sample-option");
-    const selectedFrontInput = document.getElementById("selectedFront");
-
-    frontOptions.forEach(option => {
-      option.addEventListener("click", () => {
-        frontOptions.forEach(o => o.classList.remove("selected"));
-        option.classList.add("selected");
-        selectedFrontInput.value = option.dataset.front;
-      });
-    });
-
-    // 🔹 Price Info Change
+    // Price Info
     const priceSelect = document.getElementById("price");
     const priceInfo = document.getElementById("priceInfo");
     const priceMap = { "5":2, "10":4, "20":9, "30":14, "40":19, "50":25 };
-
-    priceSelect.addEventListener("change",()=>{
+    priceSelect.addEventListener("change", ()=>{
       const p = priceSelect.value;
       priceInfo.textContent = p ? `₹${p} = ${priceMap[p]} pages included.` : "Select a price to view details.";
     });
 
-    // 🔹 WhatsApp Order
+    // WhatsApp Order
     document.getElementById("orderForm").addEventListener("submit", e=>{
       e.preventDefault();
-
       const name = document.getElementById("name").value;
       const phone = document.getElementById("phone").value;
-      const semester = document.getElementById("semester").value || "Not provided";
-      const branch = document.getElementById("branch").value || "Not provided";
       const price = document.getElementById("price").value;
-      const message = document.getElementById("message").value || "No message";
       const frontPage = document.getElementById("selectedFront").value;
       const pages = priceMap[price];
       const payment = "Cash on Delivery";
 
-      if(!frontPage){
-        alert("⚠️ Please select a front page first!");
-        return;
-      }
+      const text = `📘 *Goalpara Polytechnic Front Page Order*\n\n🖼️ Front Page: ${frontPage}\n👤 Name: ${name}\n📞 Phone: ${phone}\n💰 Plan: ₹${price} (${pages} pages)\n💳 Payment: ${payment}\n\nPlease confirm my order.`;
 
-      const text = `📘 *Goalpara Polytechnic Front Page Order*\n\n🖼️ Front Page: ${frontPage}\n👤 Name: ${name}\n📞 Phone: ${phone}\n🎓 Semester: ${semester}\n🛠️ Branch: ${branch}\n💰 Plan: ₹${price} (${pages} pages)\n💳 Payment: ${payment}\n📝 Notes: ${message}\n\nPlease confirm my order.`;
-
-      window.open(`https://wa.me/919707532882?text=${encodeURIComponent(text)}`,"_blank");
+      window.open(`https://wa.me/919707532882?text=${encodeURIComponent(text)}`, "_blank");
     });
   </script>
 </body>
