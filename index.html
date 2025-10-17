@@ -11,6 +11,7 @@
 
   <link rel="icon" type="image/x-icon" href="./favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     body { font-family: "Poppins", sans-serif; background-color: #f1f3f6; margin:0; padding:0; color:#333; }
@@ -28,12 +29,89 @@
     .sample-option img { width:100%; height:auto; border-radius:10px; display:block; max-width:300px; margin:0 auto;}
     footer { text-align:center; padding:15px; background:#2874f0; color:white; margin-top:25px;}
     .cod-tag { background:#388e3c; color:white; padding:5px 10px; border-radius:6px; display:inline-block; font-size:14px; margin-bottom:10px;}
+    
+    /* 🔹 New Feature Section */
+    .feature-links { 
+      text-align:center; 
+      background:#fff; 
+      margin:-10px auto 20px; 
+      padding:15px 10px; 
+      border-radius:12px; 
+      box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    }
+    .feature-links p { 
+      margin:10px 0; 
+      font-size:15px; 
+      font-weight:500; 
+      color:#333;
+    }
+    .feature-links i { margin-right:5px; color:#ff9800; }
+    .feature-links .highlight { color:#ff5722; font-weight:600; }
+    .feature-links a { 
+      color:#007bff; 
+      text-decoration:none; 
+      font-weight:600; 
+      transition:0.3s; 
+    }
+    .feature-links a:hover { 
+      text-decoration:underline; 
+      color:#0056b3; 
+    }
+
+    /* 🔹 Popup Message */
+    .popup {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #2874f0;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+      font-size: 15px;
+      text-align: center;
+      animation: fadeIn 0.4s ease;
+      z-index: 1000;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translate(-50%, 30px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
+    }
+
+    /* 🔹 Social Links in Footer */
+    .social-links {
+      margin-top:10px;
+    }
+    .social-links a {
+      color:white;
+      margin:0 10px;
+      font-size:24px;
+      transition:0.3s;
+    }
+    .social-links a:hover {
+      color:#ffeb3b;
+      transform:scale(1.2);
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Goalpara Polytechnic Front Page</h1>
   </header>
+
+  <!-- 🔹 Feature Section -->
+  <div class="feature-links">
+    <p><i class="fa-solid fa-hand-point-right"></i> For <span class="highlight">Job Card</span> (Goalpara Polytechnic) — <a href="#" class="popup-btn">Click Here</a></p>
+    <p><i class="fa-solid fa-hand-point-right"></i> For <span class="highlight">Advance Front Page</span> — <a href="#" class="popup-btn">Click Here</a></p>
+    <p><i class="fa-solid fa-hand-point-right"></i> For any <span class="highlight">Printing in Low Price</span> — <a href="#" class="popup-btn">Click Here</a></p>
+  </div>
+
+  <!-- 🔹 Popup Box -->
+  <div id="popup" class="popup">
+    ✨ This feature will be available soon with new designs and offers! 🚀
+  </div>
 
   <div class="container">
     <div class="sample-section">
@@ -46,7 +124,6 @@
     <h2>🛒 Place Your Order</h2>
 
     <form id="orderForm">
-      <!-- Automatically set front page since there's only one -->
       <input type="hidden" id="selectedFront" value="Front Page 2">
 
       <label for="name">Full Name *</label>
@@ -79,6 +156,12 @@
   <footer>
     ⚡ Fast COD Orders via WhatsApp | 📞 +91-9707532882 <br>
     © 2025 Goalpara Polytechnic | Made by <b>Real Akhirul 💻</b>
+
+    <!-- 🔹 Social Links -->
+    <div class="social-links">
+      <a href="https://whatsapp.com/channel/0029VbBDbOv3WHTOVxrrnG0d" target="_blank" title="WhatsApp Channel"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/goalpara_polytechnic_seller?igsh=OTZnMGk1N25rNjJw" target="_blank" title="Instagram Page"><i class="fa-brands fa-instagram"></i></a>
+    </div>
   </footer>
 
   <script>
@@ -104,6 +187,20 @@
       const text = `📘 *Goalpara Polytechnic Front Page Order*\n\n🖼️ Front Page: ${frontPage}\n👤 Name: ${name}\n📞 Phone: ${phone}\n💰 Plan: ₹${price} (${pages} pages)\n💳 Payment: ${payment}\n\nPlease confirm my order.`;
 
       window.open(`https://wa.me/919707532882?text=${encodeURIComponent(text)}`, "_blank");
+    });
+
+    // Popup Functionality
+    const popup = document.getElementById("popup");
+    const popupBtns = document.querySelectorAll(".popup-btn");
+
+    popupBtns.forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        popup.style.display = "block";
+        setTimeout(() => {
+          popup.style.display = "none";
+        }, 3000); // Hide after 3 seconds
+      });
     });
   </script>
 </body>
