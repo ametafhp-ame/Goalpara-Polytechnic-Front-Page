@@ -143,9 +143,8 @@
   </div>
 
   <footer>
-    ⚡ Fast Orders via WhatsApp: 📞 +91-9707532882 <br>
-© 2025 Goalpara Polytechnic | ❤️ Crafted by <b>Real Akhirul</b>
-
+    ⚡ Fast COD Orders via WhatsApp | 📞 +91-9707532882 <br>
+    © 2025 Goalpara Polytechnic | Made by <b>Real Akhirul 💻</b>
 
 
            <!-- Social & Payment Logos Container -->
