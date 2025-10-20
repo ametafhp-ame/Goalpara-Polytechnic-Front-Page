@@ -24,103 +24,145 @@
       color: #333;
     }
 
-    /* ✅ Header */
+    /* ✅ Modern Header */
     header {
       background: linear-gradient(90deg, #2874f0, #1565c0);
       color: white;
-      padding: 10px 15px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      padding: 10px 20px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.25);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(8px);
+      border-bottom: 2px solid rgba(255,255,255,0.15);
     }
+
     header .left {
       display: flex;
       align-items: center;
       gap: 10px;
     }
+
     header img {
-      width: 45px;
-      height: 45px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       border: 2px solid white;
       object-fit: cover;
+      transition: transform 0.3s ease;
     }
+    header img:hover {
+      transform: rotate(8deg) scale(1.1);
+    }
+
     .header-text h1 {
       margin: 0;
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 600;
-      letter-spacing: 0.3px;
     }
     .header-text p {
       margin: 0;
       font-size: 0.9rem;
-      opacity: 0.9;
-    }
-    @media (max-width: 480px) {
-      header img { width: 38px; height: 38px; }
-      .header-text h1 { font-size: 1.1rem; }
-      .header-text p { font-size: 0.8rem; }
+      opacity: 0.85;
     }
 
-    /* ✅ Hamburger Menu Icon */
+    /* ✅ Menu Icon */
     .menu-icon {
       font-size: 25px;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       background: rgba(255,255,255,0.2);
-      padding: 8px 10px;
-      border-radius: 8px;
+      padding: 8px 12px;
+      border-radius: 10px;
       transition: 0.3s;
     }
     .menu-icon:hover {
       background: rgba(255,255,255,0.3);
-      transform: scale(1.05);
+      transform: scale(1.08);
     }
 
-    /* ✅ Slide Menu */
+    /* ✅ Slide Menu - Upgraded */
     .side-menu {
       position: fixed;
       top: 0;
-      right: -270px;
-      width: 250px;
+      right: -280px;
+      width: 260px;
       height: 100%;
-      background: #ffffff;
-      box-shadow: -3px 0 10px rgba(0,0,0,0.2);
-      transition: right 0.4s ease;
+      background: linear-gradient(180deg, #e3f2fd, #bbdefb, #90caf9);
+      backdrop-filter: blur(15px);
+      box-shadow: -5px 0 20px rgba(0,0,0,0.25);
+      transition: right 0.5s ease;
       z-index: 2000;
-      padding-top: 60px;
+      padding-top: 80px;
+      border-radius: 14px 0 0 14px;
+      overflow-y: auto;
+      animation: fadeInMenu 0.5s ease;
     }
     .side-menu.active { right: 0; }
+
+    @keyframes fadeInMenu {
+      from { opacity: 0; transform: translateX(100px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .side-menu .close-btn {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      font-size: 26px;
+      color: #0d47a1;
+      cursor: pointer;
+      transition: transform 0.2s, color 0.3s;
+    }
+    .side-menu .close-btn:hover { transform: rotate(90deg); color: #1565c0; }
+
+    .side-menu h3 {
+      text-align: center;
+      margin: 10px 0 20px;
+      color: #0d47a1;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
     .side-menu ul {
       list-style: none;
       padding: 0;
       margin: 0;
     }
     .side-menu ul li {
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
     }
     .side-menu ul li a {
-      display: block;
-      padding: 15px 20px;
-      color: #2874f0;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 15px 22px;
+      color: #0d47a1;
       font-weight: 600;
       text-decoration: none;
-      transition: background 0.3s;
+      transition: all 0.3s;
+      border-radius: 8px;
     }
     .side-menu ul li a:hover {
-      background: #f1f3f6;
+      background: rgba(255,255,255,0.7);
+      color: #1a237e;
+      transform: translateX(8px);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
     }
-    .side-menu .close-btn {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      font-size: 24px;
-      color: #2874f0;
-      cursor: pointer;
+    .side-menu ul li a i {
+      color: #1976d2;
+      font-size: 19px;
+      transition: transform 0.3s;
+    }
+    .side-menu ul li a:hover i {
+      transform: rotate(12deg) scale(1.2);
+    }
+    .side-menu .divider {
+      height: 1px;
+      background: rgba(0,0,0,0.1);
+      margin: 15px 25px;
     }
 
     /* ✅ Main Container */
@@ -184,26 +226,6 @@
     .feature-links a { color: #007bff; text-decoration: none; font-weight: 600; }
     .feature-links a:hover { text-decoration: underline; color: #0056b3; }
 
-    .popup {
-      display: none;
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #2874f0;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 10px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-      font-size: 15px;
-      animation: fadeIn 0.4s ease;
-      z-index: 1000;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translate(-50%, 30px); }
-      to { opacity: 1; transform: translate(-50%, 0); }
-    }
-
     footer {
       text-align: center;
       padding: 15px;
@@ -241,6 +263,25 @@
     }
     .fa-whatsapp { color: #25D366; }
     .fa-instagram { color: #C13584; }
+
+    /* ✅ Floating WhatsApp Icon */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      font-size: 28px;
+      padding: 14px 16px;
+      border-radius: 50%;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+      z-index: 1500;
+      transition: transform 0.3s;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      background: #20ba5a;
+    }
   </style>
 </head>
 
@@ -257,16 +298,26 @@
     <div class="menu-icon" id="menuBtn"><i class="fa-solid fa-bars"></i></div>
   </header>
 
-  <!-- ✅ Slide Menu -->
+  <!-- ✅ SLIDE MENU -->
   <nav class="side-menu" id="sideMenu">
     <span class="close-btn" id="closeBtn"><i class="fa-solid fa-xmark"></i></span>
+    <h3>📘 GP Menu</h3>
     <ul>
-      <li><a href="#">🏠 Home</a></li>
-      <li><a href="#">📘 Online Notes</a></li>
-      <li><a href="#">🧾 Problem Reports</a></li>
-      <li><a href="#">ℹ️ About Us</a></li>
-      <li><a href="#">📞 Contact Support</a></li>
-      <li><a href="#">💬 WhatsApp Channel</a></li>
+      <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="advance.html"><i class="fa-solid fa-star"></i> Advance Front Page</a></li>
+      <li><a href="jod.html"><i class="fa-solid fa-id-card"></i> JOD Card</a></li>
+      <li><a href="printing.html"><i class="fa-solid fa-print"></i> Any Printing</a></li>
+
+      <div class="divider"></div>
+
+      <li><a href="#"><i class="fa-solid fa-book-open"></i> Online Notes</a></li>
+      <li><a href="#"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
+      <li><a href="#"><i class="fa-solid fa-headset"></i> Contact Support</a></li>
+
+      <div class="divider"></div>
+
+      <li><a href="https://wa.me/919707532882" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Support</a></li>
+      <li><a href="https://www.instagram.com/goalpara_polytechnic_seller" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
     </ul>
   </nav>
 
@@ -274,11 +325,7 @@
   <div class="feature-links">
     <p><i class="fa-solid fa-hand-point-right"></i> For <span class="highlight">Job Card </span>(Goalpara Poly.) — <a href="jod.html">Click Here</a></p>
     <p><i class="fa-solid fa-hand-point-right"></i> For <span class="highlight">Advance Front Page</span> — <a href="advance.html">Click Here</a></p>
-    <p><i class="fa-solid fa-hand-point-right"></i> For <span class="highlight">Printing in Low Price</span> — <a href="printing.html">Click Here</a></p>
-  </div>
-
-  <div id="popup" class="popup">
-    ✨ This feature will be available soon with new designs and offers! 🚀
+    <p><i class="fa-solid fa-hand-point-right"></i> For <span class="highlight">Any printing in Low Price</span> — <a href="printing.html">Click Here</a></p>
   </div>
 
   <!-- ✅ Order Section -->
@@ -321,13 +368,18 @@
     </form>
   </div>
 
+  <!-- ✅ Floating WhatsApp -->
+  <a href="https://wa.me/919707532882" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
   <!-- ✅ Footer -->
   <footer>
     ⚡ Fast Orders via WhatsApp: 📞 +91-9707532882 <br>
-    © 2025 Goalpara Polytechnic | ❤️ Crafted by <b>Real Akhirul</b>
+    © Goalpara Polytechnic | ❤️ Crafted by <b>Real Akhirul</b>
 
     <div class="logo-container">
-      <a href="https://whatsapp.com/channel/0029VbBDbOv3WHTOVxrrnG0d" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="https://wa.me/919707532882" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
       <a href="https://www.instagram.com/goalpara_polytechnic_seller" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
       <a href="upi://pay?pa=realakhirul@ybl&pn=Real%20Akhirul&cu=INR" target="_blank" title="PhonePe"><img src="./image/phonepe-logo.png" alt="PhonePe"></a>
       <a href="upi://pay?pa=akhirul9707-2@okhdfcbank&pn=Akhirul%20Islam&cu=INR" target="_blank" title="GPay"><img src="./image/gpay-logo.png" alt="GPay"></a>
@@ -350,18 +402,8 @@
       const phone = document.getElementById("phone").value;
       const price = document.getElementById("price").value;
       const pages = priceMap[price];
-      const text = `📘 *Goalpara Polytechnic Front Page Order*\n\n 🖼️ Name: ${name}\n📞 Phone: ${phone}\n💰 Plan: ₹${price} (${pages} pages)\n💳 Payment: Cash on Delivery\n\nKindly confirm my order.`;
+      const text = `📘 *Goalpara Polytechnic Front Page Order*\n\n🖼️ Name: ${name}\n📞 Phone: ${phone}\n💰 Plan: ₹${price} (${pages} pages)\n💳 Payment: Cash on Delivery\n\nKindly confirm my order.`;
       window.open(`https://wa.me/919707532882?text=${encodeURIComponent(text)}`, "_blank");
-    });
-
-    // Popup button
-    const popup = document.getElementById("popup");
-    document.querySelectorAll(".popup-btn").forEach(btn => {
-      btn.addEventListener("click", e => {
-        e.preventDefault();
-        popup.style.display = "block";
-        setTimeout(() => popup.style.display = "none", 3000);
-      });
     });
 
     // Menu functionality
@@ -369,12 +411,9 @@
     const sideMenu = document.getElementById("sideMenu");
     const closeBtn = document.getElementById("closeBtn");
 
-    menuBtn.addEventListener("click", () => {
-      sideMenu.classList.add("active");
-    });
-    closeBtn.addEventListener("click", () => {
-      sideMenu.classList.remove("active");
-    });
+    menuBtn.addEventListener("click", () => sideMenu.classList.add("active"));
+    closeBtn.addEventListener("click", () => sideMenu.classList.remove("active"));
   </script>
 </body>
 </html>
+
