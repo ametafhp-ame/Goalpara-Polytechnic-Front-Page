@@ -4,21 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="9DRwzjYZMmkrXth1N_c9828Pl50ZjHqCNORpKLLQijE" />
-  
-  <!-- 🔹 Title -->
+
   <title>GP Front Page | Fast COD Orders via WhatsApp</title>
 
-  <!-- 🔹 Meta -->
   <meta name="description" content="Order Goalpara Polytechnic Assignment Front Pages easily with Cash on Delivery via WhatsApp.">
   <meta name="keywords" content="Goalpara Polytechnic, front page, assignment, Assam Polytechnic, Goalpara, GP frontpage">
   <meta name="author" content="Real Akhirul">
 
-  <!-- 🔹 Icons & Fonts -->
   <link rel="icon" type="image/x-icon" href="./favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- 🔹 Styles -->
   <style>
     body {
       font-family: "Poppins", sans-serif;
@@ -35,10 +31,14 @@
       padding: 10px 15px;
       box-shadow: 0 3px 6px rgba(0,0,0,0.2);
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      gap: 12px;
       flex-wrap: wrap;
+    }
+    header .left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
     header img {
       width: 45px;
@@ -64,6 +64,65 @@
       .header-text p { font-size: 0.8rem; }
     }
 
+    /* ✅ Hamburger Menu Icon */
+    .menu-icon {
+      font-size: 25px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.2);
+      padding: 8px 10px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .menu-icon:hover {
+      background: rgba(255,255,255,0.3);
+      transform: scale(1.05);
+    }
+
+    /* ✅ Slide Menu */
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -270px;
+      width: 250px;
+      height: 100%;
+      background: #ffffff;
+      box-shadow: -3px 0 10px rgba(0,0,0,0.2);
+      transition: right 0.4s ease;
+      z-index: 2000;
+      padding-top: 60px;
+    }
+    .side-menu.active { right: 0; }
+    .side-menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .side-menu ul li {
+      border-bottom: 1px solid #eee;
+    }
+    .side-menu ul li a {
+      display: block;
+      padding: 15px 20px;
+      color: #2874f0;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .side-menu ul li a:hover {
+      background: #f1f3f6;
+    }
+    .side-menu .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 24px;
+      color: #2874f0;
+      cursor: pointer;
+    }
+
     /* ✅ Main Container */
     .container {
       background: white;
@@ -84,7 +143,6 @@
     .price-info { text-align: center; color: #2874f0; font-weight: bold; margin-bottom: 15px; }
     .cod-tag { color: #333; background: #f9f9f9; padding: 8px 10px; border-radius: 6px; display: inline-block; }
 
-    /* ✅ Button */
     button {
       width: 100%;
       background: linear-gradient(90deg, #25D366, #128C7E);
@@ -105,14 +163,12 @@
       transform: scale(1.03);
     }
 
-    /* ✅ Sample */
     .sample-section { text-align: center; margin-bottom: 25px; }
     .sample-section h3 { color: #2874f0; margin-bottom: 10px; }
     .sample-option img {
       width: 100%; max-width: 300px; border-radius: 10px;
     }
 
-    /* ✅ Feature Links */
     .feature-links {
       background: #fff;
       margin: 15px auto;
@@ -128,7 +184,6 @@
     .feature-links a { color: #007bff; text-decoration: none; font-weight: 600; }
     .feature-links a:hover { text-decoration: underline; color: #0056b3; }
 
-    /* ✅ Popup */
     .popup {
       display: none;
       position: fixed;
@@ -149,7 +204,6 @@
       to { opacity: 1; transform: translate(-50%, 0); }
     }
 
-    /* ✅ Footer */
     footer {
       text-align: center;
       padding: 15px;
@@ -193,18 +247,34 @@
 <body>
   <!-- ✅ Header -->
   <header>
-    <img src="./image/glpfp.png" alt="GP Logo">
-    <div class="header-text">
-      <h1>Goalpara Polytechnic</h1>
-      <p>Front Page Order Portal</p>
+    <div class="left">
+      <img src="./image/glpfp.png" alt="GP Logo">
+      <div class="header-text">
+        <h1>Goalpara Polytechnic</h1>
+        <p>Front Page Order Portal</p>
+      </div>
     </div>
+    <div class="menu-icon" id="menuBtn"><i class="fa-solid fa-bars"></i></div>
   </header>
+
+  <!-- ✅ Slide Menu -->
+  <nav class="side-menu" id="sideMenu">
+    <span class="close-btn" id="closeBtn"><i class="fa-solid fa-xmark"></i></span>
+    <ul>
+      <li><a href="#">🏠 Home</a></li>
+      <li><a href="#">📘 Online Notes</a></li>
+      <li><a href="#">🧾 Problem Reports</a></li>
+      <li><a href="#">ℹ️ About Us</a></li>
+      <li><a href="#">📞 Contact Support</a></li>
+      <li><a href="#">💬 WhatsApp Channel</a></li>
+    </ul>
+  </nav>
 
   <!-- ✅ Feature Section -->
   <div class="feature-links">
-    <p><i class="fa-solid fa-hand-point-right"></i> For <span class="highlight">Job Card </span>(Goalpara Poly.) — <a href="#" class="popup-btn">Click Here</a></p>
-    <p><i class="fa-solid fa-hand-point-right"></i> For <span class="highlight">Advance Front Page</span> — <a href="#" class="popup-btn">Click Here</a></p>
-    <p><i class="fa-solid fa-hand-point-right"></i> For <span class="highlight">Printing in Low Price</span> — <a href="#" class="popup-btn">Click Here</a></p>
+    <p><i class="fa-solid fa-hand-point-right"></i> For <span class="highlight">Job Card </span>(Goalpara Poly.) — <a href="jod.html">Click Here</a></p>
+    <p><i class="fa-solid fa-hand-point-right"></i> For <span class="highlight">Advance Front Page</span> — <a href="advance.html">Click Here</a></p>
+    <p><i class="fa-solid fa-hand-point-right"></i> For <span class="highlight">Printing in Low Price</span> — <a href="printing.html">Click Here</a></p>
   </div>
 
   <div id="popup" class="popup">
@@ -264,7 +334,6 @@
     </div>
   </footer>
 
-  <!-- ✅ Script -->
   <script>
     const priceMap = { "5": 2, "10": 4, "20": 9, "30": 14, "40": 19, "50": 25 };
     const priceSelect = document.getElementById("price");
@@ -281,10 +350,11 @@
       const phone = document.getElementById("phone").value;
       const price = document.getElementById("price").value;
       const pages = priceMap[price];
-      const text = `📘 *Goalpara Polytechnic Front Page Order*\n\nName: ${name}\n📞 Phone: ${phone}\n💰 Plan: ₹${price} (${pages} pages)\n💳 Payment: Cash on Delivery\n\nKindly confirm my order.`;
+      const text = `📘 *Goalpara Polytechnic Front Page Order*\n\n 🖼️ Name: ${name}\n📞 Phone: ${phone}\n💰 Plan: ₹${price} (${pages} pages)\n💳 Payment: Cash on Delivery\n\nKindly confirm my order.`;
       window.open(`https://wa.me/919707532882?text=${encodeURIComponent(text)}`, "_blank");
     });
 
+    // Popup button
     const popup = document.getElementById("popup");
     document.querySelectorAll(".popup-btn").forEach(btn => {
       btn.addEventListener("click", e => {
@@ -293,9 +363,18 @@
         setTimeout(() => popup.style.display = "none", 3000);
       });
     });
+
+    // Menu functionality
+    const menuBtn = document.getElementById("menuBtn");
+    const sideMenu = document.getElementById("sideMenu");
+    const closeBtn = document.getElementById("closeBtn");
+
+    menuBtn.addEventListener("click", () => {
+      sideMenu.classList.add("active");
+    });
+    closeBtn.addEventListener("click", () => {
+      sideMenu.classList.remove("active");
+    });
   </script>
 </body>
 </html>
-
-
-
