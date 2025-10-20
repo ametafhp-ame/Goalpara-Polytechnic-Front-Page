@@ -208,12 +208,20 @@
       transform: scale(1.03);
     }
 
+    /* Social Icon Colors */
+.fa-whatsapp { color: #25D366; transition: 0.3s; }
+.fa-whatsapp:hover { color: #20ba5a; }
+
+.fa-instagram { color: #C13584; transition: 0.3s; }
+.fa-instagram:hover { color: #ad1457; }
+
+
     /* 🔹 Image Preview */
     .sample-section { text-align: center; margin-bottom: 25px; }
     .sample-section h3 { color: #e91e63; margin-bottom: 10px; }
     .sample-option img {
       width: 100%;
-      max-width: 300px;
+      max-width: 350px;
       border-radius: 10px;
       box-shadow: 0 6px 12px rgba(0,0,0,0.2);
       transition: transform 0.3s ease;
@@ -277,24 +285,6 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
 
-    /* 🔹 Floating WhatsApp */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: white;
-      font-size: 28px;
-      padding: 14px 16px;
-      border-radius: 50%;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.25);
-      z-index: 1500;
-      transition: transform 0.3s;
-    }
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      background: #20ba5a;
-    }
   </style>
 </head>
 
@@ -382,12 +372,11 @@
       <label for="price">Price Plan *</label>
       <select id="price" required>
         <option value="">-- Select Price --</option>
-        <option value="5">₹5 (2 front pages)</option>
-        <option value="10">₹10 (4 front pages)</option>
-        <option value="20">₹20 (9 front pages)</option>
-        <option value="30">₹30 (14 front pages)</option>
-        <option value="40">₹40 (19 front pages)</option>
-        <option value="50">₹50 (25 front pages)</option>
+        <option value="10">₹10 (3 front pages)</option>
+        <option value="20">₹20 (7 front pages)</option>
+        <option value="30">₹30 (12 front pages)</option>
+        <option value="40">₹40 (16 front pages)</option>
+        <option value="50">₹50 (21 front pages)</option>
       </select>
 
       <div class="price-info" id="priceInfo">Select a price to view details.</div>
@@ -400,9 +389,12 @@
   <!-- 🔹 Footer -->
   <footer>
     ⚡ Fast Orders via WhatsApp: 📞 +91-9707532882 <br>
-    © 2025 Goalpara Polytechnic | ❤️ Crafted by <b>Real Akhirul</b>
+    © Goalpara Polytechnic | ❤️ Crafted by <b>Real Akhirul</b>
     <div class="logo-container">
-      <a href="https://whatsapp.com/channel/0029VbBDbOv3WHTOVxrrnG0d" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="https://whatsapp.com/channel/0029VbBDbOv3WHTOVxrrnG0d" target="_blank" title="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
       <a href="https://www.instagram.com/goalpara_polytechnic_seller" target="_blank"><i class="fa-brands fa-instagram"></i></a>
       <a href="upi://pay?pa=realakhirul@ybl&pn=Real%20Akhirul&cu=INR" target="_blank"><img src="./image/phonepe-logo.png" alt="PhonePe"></a>
       <a href="upi://pay?pa=akhirul9707-2@okhdfcbank&pn=Akhirul%20Islam&cu=INR" target="_blank"><img src="./image/gpay-logo.png" alt="GPay"></a>

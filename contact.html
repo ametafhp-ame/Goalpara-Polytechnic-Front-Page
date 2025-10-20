@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Support | Goalpara Polytechnic</title>
+  <meta name="description" content="Contact support for Goalpara Polytechnic Front Page Orders.">
+  <link rel="icon" href="./favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body { font-family: "Poppins", sans-serif; background: #f9f9f9; margin:0; padding:0; color:#333; }
+    header, footer { background: linear-gradient(90deg, #ff6f61, #f06292); color:white; padding:12px 22px; text-align:center;}
+    .container { max-width: 650px; margin: 30px auto; background:white; padding:25px 20px; border-radius:12px; box-shadow:0 3px 10px rgba(0,0,0,0.15);}
+    h1 { color:#e91e63; text-align:center; margin-bottom:15px; }
+    label { font-weight:600; display:block; margin-top:10px; }
+    input, textarea { width:100%; padding:10px; border-radius:8px; border:1px solid #ccc; margin-bottom:15px; font-size:15px; }
+    button { background:#e91e63; color:white; padding:12px; width:100%; border:none; border-radius:10px; cursor:pointer; font-size:16px; }
+    button:hover { background:#d81b60; }
+    .logo-container { display:flex; justify-content:center; gap:20px; margin-top:20px; flex-wrap:wrap;}
+    .logo-container a { width:40px; height:40px; border-radius:30%; background:#f0f0f0; display:flex; justify-content:center; align-items:center; font-size:26px; transition:0.3s; }
+    .logo-container a:hover { transform:scale(1.2); box-shadow:0 4px 15px rgba(0,0,0,0.2);}
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Goalpara Polytechnic</h1>
+    <p>Front Page Order Portal</p>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1>Contact Support</h1>
+    <p>If you face any issues with placing an order or have questions about our services, please use the form below or contact us via WhatsApp.</p>
+    <form id="contactForm">
+      <label for="name">Full Name *</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="phone">Phone Number *</label>
+      <input type="tel" id="phone" placeholder="+91 1234567890" required>
+
+      <label for="message">Message *</label>
+      <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+      <button type="submit">Send via WhatsApp</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    ⚡ Fast Orders via WhatsApp: 📞 +91-9707532882 <br>
+    © 2025 Goalpara Polytechnic | ❤️ Crafted by <b>Real Akhirul</b>
+    <div class="logo-container">
+      <a href="https://whatsapp.com/channel/0029VbBDbOv3WHTOVxrrnG0d" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/goalpara_polytechnic_seller" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="upi://pay?pa=realakhirul@ybl&pn=Real%20Akhirul&cu=INR" target="_blank"><img src="./image/phonepe-logo.png" alt="PhonePe"></a>
+      <a href="upi://pay?pa=akhirul9707-2@okhdfcbank&pn=Akhirul%20Islam&cu=INR" target="_blank"><img src="./image/gpay-logo.png" alt="GPay"></a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const message = document.getElementById("message").value.trim();
+      if(!name || !phone || !message) { alert("Please fill all fields."); return; }
+
+      const text = `📩 *Contact Support*\n\n🧑‍💼 Name: ${name}\n📞 Phone: ${phone}\n💬 Message: ${message}`;
+      window.open(`https://wa.me/919707532882?text=${encodeURIComponent(text)}`, "_blank");
+    });
+  </script>
+
+</body>
+</html>
