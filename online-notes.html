@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | Goalpara Polytechnic Portal</title>
-  <meta name="description" content="Know about the Goalpara Polytechnic Front Page Order Portal and its student creator.">
+  <title>Online Notes | Goalpara Polytechnic Portal</title>
+  <meta name="description" content="Download online study notes for Goalpara Polytechnic students. Semester-wise organized and easy to access.">
   <meta name="author" content="Real Akhirul">
   <link rel="icon" type="image/x-icon" href="./favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -13,140 +13,162 @@
   <style>
     body {
       font-family: "Poppins", sans-serif;
-      background: #f4f7f8;
       margin: 0;
+      background: linear-gradient(180deg, #eef3f8, #e6e9f0);
       color: #333;
+      overflow-x: hidden;
     }
 
     /* HEADER */
     header {
-      background: linear-gradient(90deg, #009688, #00796B);
+      background: linear-gradient(90deg, #5C6BC0, #3949AB);
       color: white;
-      padding: 10px 20px;
+      padding: 12px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.25);
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+      animation: slideDown 0.5s ease;
     }
+
+    @keyframes slideDown {
+      from { transform: translateY(-60px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
     header .left { display: flex; align-items: center; gap: 10px; }
-    header img {
-      width: 48px; height: 48px; border-radius: 50%; border: 2px solid white;
-    }
+    header img { width: 48px; height: 48px; border-radius: 50%; border: 2px solid white; }
     .header-text h1 { margin: 0; font-size: 1.2rem; font-weight: 600; }
     .header-text p { margin: 0; font-size: 0.85rem; opacity: 0.9; }
-
-    .menu-icon {
-      font-size: 24px; cursor: pointer; background: rgba(255,255,255,0.2);
-      padding: 8px 12px; border-radius: 10px;
-    }
+    .menu-icon { font-size: 24px; cursor: pointer; background: rgba(255,255,255,0.2); padding: 8px 12px; border-radius: 10px; transition: 0.3s; }
+    .menu-icon:hover { transform: rotate(90deg); }
 
     /* SIDE MENU */
     .side-menu {
-      position: fixed; top: 0; right: -270px; width: 250px; height: 100%;
-      background: linear-gradient(180deg, #e0f2f1, #b2dfdb);
+      position: fixed; top: 0; right: -270px;
+      width: 250px; height: 100%;
+      background: linear-gradient(180deg, #c5cae9, #9fa8da);
       box-shadow: -4px 0 15px rgba(0,0,0,0.25);
-      transition: right 0.4s ease;
       border-radius: 10px 0 0 10px;
+      transition: right 0.4s ease;
       z-index: 2000;
       padding-top: 40px;
     }
+
     .side-menu.active { right: 0; }
     .side-menu .close-btn {
       position: absolute; top: 15px; right: 20px;
-      font-size: 26px; color: #004D40; cursor: pointer;
-    }
-    .side-menu ul { list-style: none; margin: 0; padding: 0; }
-    .side-menu ul li a {
-      display: flex; align-items: center; gap: 12px; padding: 14px 20px;
-      color: #004D40; text-decoration: none; font-weight: 600;
-      border-radius: 8px; transition: all 0.3s;
-    }
-    .side-menu ul li a:hover {
-      background: rgba(255,255,255,0.7); transform: translateX(6px);
+      font-size: 26px; color: #1A237E; cursor: pointer;
     }
 
+    .side-menu ul { list-style: none; padding: 0; margin: 0; }
+    .side-menu ul li a {
+      display: flex; align-items: center; gap: 12px;
+      color: #1A237E; text-decoration: none;
+      font-weight: 600; padding: 14px 20px;
+      border-radius: 8px; transition: all 0.3s;
+    }
+    .side-menu ul li a:hover { background: rgba(255,255,255,0.8); transform: translateX(6px); }
+
     .overlay {
-      display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3);
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.3);
       z-index: 1500;
     }
     .overlay.active { display: block; }
 
-    /* ABOUT SECTION */
-    .about-container {
-      max-width: 600px;
-      margin: 25px auto;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-      padding: 20px;
-      text-align: center;
-      animation: fadeIn 0.6s ease;
+    .divider {
+      border-top: 1px solid rgba(0,0,0,0.2);
+      margin: 10px 20px;
     }
-    @keyframes fadeIn {
+
+    /* MAIN CONTENT */
+    .notes-container {
+      max-width: 1000px;
+      margin: 25px auto;
+      padding: 0 15px;
+    }
+
+    .notes-container h2 {
+      text-align: center;
+      color: #3949AB;
+      font-size: 1.7rem;
+      margin-bottom: 5px;
+    }
+
+    .notes-container p {
+      text-align: center;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .notes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 20px;
+    }
+
+    .note-card {
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 20px;
+      transition: 0.3s;
+      animation: fadeUp 0.5s ease;
+    }
+
+    @keyframes fadeUp {
       from { opacity: 0; transform: translateY(15px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Profile Glow Animation */
-    .profile-wrapper {
-      position: relative;
-      width: 130px;
-      height: 130px;
-      margin: 0 auto 15px;
-    }
-    .glow-border {
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      background: conic-gradient(#00bfa5, #1de9b6, #00bfa5);
-      animation: spin 4s linear infinite;
-      filter: blur(4px);
-    }
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    .profile-pic {
-      position: relative;
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid white;
-      z-index: 2;
+    .note-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(57,73,171,0.2);
     }
 
-    .about-container h2 {
-      color: #009688; margin-bottom: 10px; font-size: 1.4rem;
+    .note-card h3 {
+      color: #3949AB;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      text-align: center;
     }
 
-    .about-container p {
-      font-size: 15px; line-height: 1.6; margin-bottom: 15px;
+    .note-card p {
+      font-size: 0.95rem;
+      color: #555;
+      text-align: center;
+      margin-bottom: 15px;
     }
 
-    .mission-box {
-      background: #e0f2f1;
-      padding: 15px;
-      border-radius: 10px;
-      margin-top: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      text-align: left;
+    .download-btn {
+      display: block;
+      text-align: center;
+      background: linear-gradient(90deg, #5C6BC0, #3949AB);
+      color: white;
+      font-weight: 600;
+      padding: 10px 0;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
     }
-    .mission-box h3 {
-      color: #00695C;
-      margin-bottom: 8px;
+
+    .download-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(57,73,171,0.4);
     }
 
     /* FOOTER */
     footer {
       text-align: center;
       padding: 15px;
-      background: #009688;
+      background: linear-gradient(90deg, #5C6BC0, #3949AB);
       color: white;
-      margin-top: 25px;
+      margin-top: 30px;
       font-size: 14px;
     }
 
@@ -175,7 +197,6 @@
     .fa-instagram { color: #C13584; }
   </style>
 </head>
-
 <body>
   <!-- HEADER -->
   <header>
@@ -183,7 +204,7 @@
       <img src="./image/glpfp.png" alt="GP Logo">
       <div class="header-text">
         <h1>Goalpara Polytechnic</h1>
-        <p>About Page Portal</p>
+        <p>Online Notes</p>
       </div>
     </div>
     <div class="menu-icon" id="menuBtn"><i class="fa-solid fa-bars"></i></div>
@@ -207,26 +228,49 @@
     </ul>
   </nav>
 
-  <!-- ABOUT CONTENT -->
-  <div class="about-container">
-    <div class="profile-wrapper">
-      <div class="glow-border"></div>
-      <img src="./image/profile.jpeg" alt="Profile Photo" class="profile-pic">
+  <!-- MAIN CONTENT -->
+  <section class="notes-container">
+    <h2>📘 Semester-Wise Notes</h2>
+    <p>Access your study materials for each semester — easy to view or download anytime.</p>
+
+    <div class="notes-grid">
+      <div class="note-card">
+        <h3>1st Semester</h3>
+        <p>Basic subjects and introductory topics for all departments.</p>
+        <a href="#" class="download-btn">📥 View Notes</a>
+      </div>
+
+      <div class="note-card">
+        <h3>2nd Semester</h3>
+        <p>Core engineering subjects and essential fundamentals.</p>
+        <a href="#" class="download-btn">📥 View Notes</a>
+      </div>
+
+      <div class="note-card">
+        <h3>3rd Semester</h3>
+        <p>Branch-specific subjects and practical guidance.</p>
+        <a href="#" class="download-btn">📥 View Notes</a>
+      </div>
+
+      <div class="note-card">
+        <h3>4th Semester</h3>
+        <p>Advanced topics and lab manuals for departmental study.</p>
+        <a href="#" class="download-btn">📥 View Notes</a>
+      </div>
+
+      <div class="note-card">
+        <h3>5th Semester</h3>
+        <p>Detailed notes, projects, and previous year papers.</p>
+        <a href="#" class="download-btn">📥 View Notes</a>
+      </div>
+
+      <div class="note-card">
+        <h3>6th Semester</h3>
+        <p>Final year subjects and project work reference materials.</p>
+        <a href="#" class="download-btn">📥 View Notes</a>
+      </div>
     </div>
-
-    <h2>Hello, I’m Real Akhirul 👋</h2>
-    <p>I’m a student of <b>Goalpara Polytechnic</b>. I created this website to help our students get their front pages, JOD cards, and other printing work easily — without paying too much money outside.</p>
-
-    <div class="mission-box">
-      <h3>🎯 Our Mission</h3>
-      <p>Many students waste time and money on small print works.  
-      This website helps everyone save both. You can order directly from your phone with <b>Cash on Delivery</b> — fast and affordable!</p>
-      <p>It’s a student-made project — made with love ❤️ for all GP students.</p>
-    </div>
-
-    <p style="margin-top:15px;">Thank you for visiting this portal!  
-    If you have ideas or suggestions, message me anytime on WhatsApp.</p>
-  </div>
+  </section>
 
   <!-- FOOTER -->
   <footer>
